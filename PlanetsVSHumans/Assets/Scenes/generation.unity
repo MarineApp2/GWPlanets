@@ -123,63 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &467516377
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 461379107945560766, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_Name
-      value: GalaxyBlackHole
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
 --- !u!1 &932305874
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,3 +301,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1715032937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 461379107945560766, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_Name
+      value: GalaxyBlackHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417832414848531508, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90a01d4c74ec4484599bff05dc67230b, type: 3}

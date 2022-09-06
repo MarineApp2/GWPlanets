@@ -5,6 +5,7 @@ namespace Utils
 {
     public static class Numerics
     {
+        public const float TAU = 2.0f * Mathf.PI;
         public const int million = 1000000;
         public const long billion = 1000000000;
         public const long trillion = 1000000000000;
