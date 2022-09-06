@@ -4,24 +4,40 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
-    Vector2 position = new Vector2();
-    public float sensivity = 0.3f;
+    Vector3 position = new Vector3();
+
+    public float sensivityMove = 0.3f;
+    public float sensivityScroll = 10f;
+    public float min = 53.5f;
+    public float max = 100f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        position = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!IsMouseOffTheScreen() && Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetAxis("Mouse ScrollWheel") > 0f && transform.position.y != min)
+        {
+            Vector3 currentPos = transform.position;
+            
+            currentPos += Input.GetAxis("Mouse ScrollWheel") * transform.forward * sensivityScroll;
+            currentPos.y = Mathf.Clamp(currentPos.y, min, max);
+            
+            if (currentPos.y != max)
+                transform.position = new Vector3(currentPos.x, currentPos.y, currentPos.z);
+        }
+
+
         if (!IsMouseOffTheScreen() && Input.GetMouseButton(0))
         {
-            position.x -= Input.GetAxis("Mouse X") * sensivity;
-            position.y -= Input.GetAxis("Mouse Y") * sensivity;
+            position.x -= Input.GetAxis("Mouse X") * sensivityMove;
+            position.z -= Input.GetAxis("Mouse Y") * sensivityMove;
 
-            transform.position = new Vector3(position.x, 53.5f, position.y);
+            transform.position = new Vector3(position.x, transform.position.y, position.z);
         }
     }
 
