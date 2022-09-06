@@ -33,7 +33,7 @@ public class Population : MonoBehaviour
     void Start()
     {
         startPopulation = population;
-        max = maxPopulation * Numbers.billion;
+        max = maxPopulation * Numerics.billion;
     }
 
     // Update is called once per frame

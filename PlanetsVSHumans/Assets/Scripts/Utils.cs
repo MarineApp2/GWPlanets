@@ -3,11 +3,20 @@ using UnityEngine;
 
 namespace Utils
 {
-    public static class Numbers
+    public static class Numerics
     {
         public const int million = 1000000;
         public const long billion = 1000000000;
         public const long trillion = 1000000000000;
+
+        public static Vector3 RNGPosition(Vector2 xrange, Vector2 yrange, Vector2 zrange)
+        {
+            float x = UnityEngine.Random.Range(xrange.x, xrange.y);
+            float y = UnityEngine.Random.Range(yrange.x, yrange.y);
+            float z = UnityEngine.Random.Range(zrange.x, zrange.y);
+
+            return new Vector3(x, y, z);
+        }
     }
 
     // countdown timer in seconds
