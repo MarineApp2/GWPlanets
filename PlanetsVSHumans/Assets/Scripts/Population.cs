@@ -14,6 +14,8 @@ enum GrowthFunction
 
 public class Population : MonoBehaviour
 {
+    public GameObject blackHolePrefab;
+
     // planet's population number
     public long population = 1000000000;
     private long startPopulation = 0;
@@ -74,8 +76,8 @@ public class Population : MonoBehaviour
 
     private void BlackHole()
     {
-        Debug.Log("Black hole");
-        //instantiate prefab blackhole
-        //destroy this
+        GameObject bh = Instantiate<GameObject>(blackHolePrefab);
+        bh.transform.position = transform.position;
+        Destroy(this.gameObject);
     }
 }
