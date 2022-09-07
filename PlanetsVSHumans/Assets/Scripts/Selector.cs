@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Selector : MonoBehaviour
 {
-    GameObject selectedObject;
+    GameObject selectedObject = null;
+    GameObject interactableObject = null;
 
-    [HideInInspector] public RaycastHit hit;
+    [HideInInspector] public RaycastHit hit = new RaycastHit();
 
     private void Update()
     {
@@ -16,15 +17,16 @@ public class Selector : MonoBehaviour
         {
             if (!hit.collider.CompareTag("Pickable"))
             {
-                selectedObject = null;
+                interactableObject = null;
                 return;
             }
 
-            selectedObject = hit.collider.gameObject;
+            interactableObject = hit.collider.gameObject;
+            selectedObject = interactableObject;
         }
 
         if (hit.collider == null)
-            selectedObject = null;
+            interactableObject = null;
     }
                       
     private RaycastHit CastRay()
