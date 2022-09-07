@@ -17,14 +17,16 @@ public class Population : MonoBehaviour
 
     // tick for population growth (growth per second)
     [SerializeField] private float growthTick = 1.0f;
-    [SerializeField] private float growthRate = 0.01f;
+    [SerializeField] private float growthSpeedMin = 1.0f;
+    [SerializeField] private float growthSpeedMax = 5.0f;
+    private float growthRate = 0.01f;
 
     private Timer timer = new Timer();
 
     // Start is called before the first frame update
     void Start()
     {
-
+        growthRate *= Random.Range(growthSpeedMin, growthSpeedMax);
     }
 
     // Update is called once per frame

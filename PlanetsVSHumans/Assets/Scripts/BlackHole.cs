@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlackHole : MonoBehaviour
 {
     public float attractionForce = 1.0f;
+    public float rotationSpeed = 100.0f;
 
     // attracted planets, stars
     private List<GameObject> bodies = new List<GameObject>();
@@ -35,8 +36,10 @@ public class BlackHole : MonoBehaviour
                 continue;
             }
 
-            Vector3 dir = (transform.position - body.transform.position).normalized;
-            body.transform.position += dir * (attractionForce * Time.deltaTime);
+            Vector3 dir = transform.position - body.transform.position;
+            body.transform.position += dir.normalized * (attractionForce * Time.deltaTime);
+
+            body.GetComponent<Orbital>().rotationSpeed = rotationSpeed / dir.magnitude;
 
             if ((transform.position - body.transform.position).magnitude <= hole)
             {
@@ -49,7 +52,7 @@ public class BlackHole : MonoBehaviour
 
         for (int i = 0; i < destroyedCount; ++i)
         {
-            GameObject body = bodies[i];
+            GameObject body = bodies[destroyed[i]];
             bodies.Remove(body);
             Destroy(body);
         }
@@ -58,8 +61,20 @@ public class BlackHole : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         bodies.Add(other.gameObject);
+
+        GameObject galaxyBlackHoleInstance = GameObject.Find("GalaxyBlackHole");
+        
+        for (int i = 0; i < other.transform.childCount; ++i)
+        {
+            Transform child = other.transform.GetChild(i);
+            Orbital ot = child.GetComponent<Orbital>();
+            ot.pivotObject = galaxyBlackHoleInstance;
+            child.transform.parent = other.transform.parent;
+        }
         other.transform.parent = null;
-        other.GetComponent<Orbital>().pivotObject = gameObject;
+
+        Orbital o = other.GetComponent<Orbital>();
+        o.pivotObject = gameObject;
         other.GetComponent<Rigidbody>().detectCollisions = false;
     }
 
