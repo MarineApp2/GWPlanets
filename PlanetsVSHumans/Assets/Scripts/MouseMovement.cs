@@ -11,9 +11,12 @@ public class MouseMovement : MonoBehaviour
     public float min = 53.5f;
     public float max = 100f;
 
+    private Focus focus;
+
     // Start is called before the first frame update
     void Start()
     {
+        focus = GetComponent<Focus>();
         position = transform.position;
     }
 
@@ -22,6 +25,8 @@ public class MouseMovement : MonoBehaviour
     {
         if (!IsMouseOffTheScreen() && Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetAxis("Mouse ScrollWheel") > 0f && transform.position.y != min)
         {
+            focus.Reset();
+
             position = transform.position;
             
             position += Input.GetAxis("Mouse ScrollWheel") * transform.forward * sensivityScroll;
@@ -34,6 +39,8 @@ public class MouseMovement : MonoBehaviour
 
         if (!IsMouseOffTheScreen() && Input.GetMouseButton(0))
         {
+            focus.Reset();
+
             position.x -= Input.GetAxis("Mouse X") * sensivityMove;
             position.z -= Input.GetAxis("Mouse Y") * sensivityMove;
 
