@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19684c31ef5d05a4b92d687438a229a3, type: 2}
+  - {fileID: 2100000, guid: ca24cbfc704d54a46b31b15d58eb4fe9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d890b79362dbdcb48b044cae59fbff1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3909394748355532877, guid: c68fb2a28bfeb4d468a35218898e6be7, type: 3}
+  prefab: {fileID: 3909394748355532877, guid: 44d9b69e13ec3e542804819c091187b8, type: 3}
   generationRadius: 10
   entities: 7
   orbitalRotationSpeed: 80

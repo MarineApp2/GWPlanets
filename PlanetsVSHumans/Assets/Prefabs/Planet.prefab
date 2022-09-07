@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eff9dc043a18eb344a8795d3e20ab108, type: 2}
+  - {fileID: 2100000, guid: b9f09105b16c50743bf8029056b85ef5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396d71b0601414942a36c52ca9749b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackHolePrefab: {fileID: 3909394748355532877, guid: 80ff4ba4ad745a646bb7c0aad56aba6f, type: 3}
+  blackHolePrefab: {fileID: 3909394748355532877, guid: a0bc1d8d22e86654ab9173796567ea71, type: 3}
   populationRate: 0
   population: 0
   maxPopulation: 10
