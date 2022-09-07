@@ -22,13 +22,13 @@ public class MouseMovement : MonoBehaviour
     {
         if (!IsMouseOffTheScreen() && Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetAxis("Mouse ScrollWheel") > 0f && transform.position.y != min)
         {
-            Vector3 currentPos = transform.position;
+            position = transform.position;
             
-            currentPos += Input.GetAxis("Mouse ScrollWheel") * transform.forward * sensivityScroll;
-            currentPos.y = Mathf.Clamp(currentPos.y, min, max);
+            position += Input.GetAxis("Mouse ScrollWheel") * transform.forward * sensivityScroll;
+            position.y = Mathf.Clamp(position.y, min, max);
             
-            if (currentPos.y != max)
-                transform.position = new Vector3(currentPos.x, currentPos.y, currentPos.z);
+            if (position.y != max)
+                transform.position = new Vector3(position.x, position.y, position.z);
         }
 
 
