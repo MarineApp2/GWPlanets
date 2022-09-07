@@ -58,6 +58,7 @@ public class BlackHole : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         bodies.Add(other.gameObject);
+        other.transform.parent = null;
         other.GetComponent<Orbital>().pivotObject = gameObject;
         other.GetComponent<Rigidbody>().detectCollisions = false;
     }
