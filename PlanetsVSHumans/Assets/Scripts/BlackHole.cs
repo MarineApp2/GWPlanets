@@ -21,18 +21,13 @@ public class BlackHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int destroyedCount = 0;
-        List<int> destroyed = new List<int>();
-        int id = 0;
+        List<GameObject> destroyed = new List<GameObject>();
 
         foreach (GameObject body in bodies)
         {
             if (body == null)
             {
-                ++destroyedCount;
-                destroyed.Add(id);
-                ++id;
-
+                destroyed.Add(body);
                 continue;
             }
 
@@ -43,23 +38,20 @@ public class BlackHole : MonoBehaviour
 
             if ((transform.position - body.transform.position).magnitude <= hole)
             {
-                ++destroyedCount;
-                destroyed.Add(id);
+                Destroy(body);
             }
-
-            ++id;
         }
 
-        for (int i = 0; i < destroyedCount; ++i)
+        foreach (GameObject go in destroyed)
         {
-            GameObject body = bodies[destroyed[i]];
-            bodies.Remove(body);
-            Destroy(body);
+            bodies.Remove(go);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        other.GetComponent<Rigidbody>().detectCollisions = false;
+
         bodies.Add(other.gameObject);
 
         GameObject galaxyBlackHoleInstance = GameObject.Find("GalaxyBlackHole");
@@ -75,7 +67,6 @@ public class BlackHole : MonoBehaviour
 
         Orbital o = other.GetComponent<Orbital>();
         o.pivotObject = gameObject;
-        other.GetComponent<Rigidbody>().detectCollisions = false;
     }
 
     private void OnTriggerExit(Collider other)
