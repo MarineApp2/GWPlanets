@@ -19,7 +19,6 @@ public class OrbitalGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector2 range = new Vector2(-generationRadius, generationRadius);
         float[] steps = new float[entities];
         for (int i = 0; i < entities; ++i)
         {

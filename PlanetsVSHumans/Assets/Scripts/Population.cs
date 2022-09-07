@@ -23,10 +23,16 @@ public class Population : MonoBehaviour
 
     private Timer timer = new Timer();
 
+    // only planets have the Population script
+    Master master;
+
     // Start is called before the first frame update
     void Start()
     {
         growthRate *= Random.Range(growthSpeedMin, growthSpeedMax);
+
+        master = FindObjectOfType<Master>();
+        master.planets.Add(gameObject);
     }
 
     // Update is called once per frame
@@ -46,5 +52,10 @@ public class Population : MonoBehaviour
         GameObject bh = Instantiate<GameObject>(blackHolePrefab);
         bh.transform.position = transform.position;
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        master.planets.Remove(gameObject);
     }
 }

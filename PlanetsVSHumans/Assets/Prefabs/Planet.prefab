@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0
+  clockwise: 1
   pivotObject: {fileID: 0}
 --- !u!114 &2799391950012570576
 MonoBehaviour:
@@ -133,7 +134,8 @@ MonoBehaviour:
   population: 0
   maxPopulation: 10
   growthTick: 1
-  growthRate: 0.01
+  growthSpeedMin: 1
+  growthSpeedMax: 5
 --- !u!114 &3715882423019327986
 MonoBehaviour:
   m_ObjectHideFlags: 0
