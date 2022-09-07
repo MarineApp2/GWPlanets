@@ -1,83 +1,48 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using Utils;
 
-enum GrowthFunction
-{
-    SquareTime,
-    CubicTime,
-    ExponentialTime
-};
-
 public class Population : MonoBehaviour
 {
     public GameObject blackHolePrefab;
 
-    // planet's population number
-    public long population = 1000000000;
-    private long startPopulation = 0;
+    public float populationRate = 0.0f;
+    public long population = 0L;
 
     // planet's can only stand 10 billion individuals (as in 10 billion consumers)
     // planet's max population (in billion)
     [SerializeField] private int maxPopulation = 10;
-    private long max = 0;
 
     // tick for population growth (growth per second)
-    [SerializeField] private float growthRate = 1.0f;
-    [SerializeField] private GrowthFunction growthFct = GrowthFunction.SquareTime;
+    [SerializeField] private float growthTick = 1.0f;
+    [SerializeField] private float growthRate = 0.01f;
 
     private Timer timer = new Timer();
 
     // Start is called before the first frame update
     void Start()
     {
-        startPopulation = population;
-        max = maxPopulation * Numerics.billion;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer.Bip(growthRate))
-            population = startPopulation + GrowthAmount();
+        if (timer.Bip(growthTick))
+            populationRate += growthRate;
 
-        if (population >= max)
+        population = (long)(populationRate * (double)(maxPopulation * Numerics.billion));
+
+        if (populationRate >= 1.0f)
             BlackHole();
-
-        timer.UpdateTimeStamp();
-    }
-
-    private long GrowthAmount()
-    {
-        long p = 0;
-        switch (growthFct)
-        {
-            case GrowthFunction.SquareTime:
-                p = (long)timer.SqrTime();
-                break;
-            case GrowthFunction.CubicTime:
-                p = (long)timer.CubTime();
-                break;
-            case GrowthFunction.ExponentialTime:
-                p = (long)timer.ExpTime();
-                break;
-            default:
-                break;
-        }
-
-        if (p < 0)
-            p = long.MaxValue;
-
-        return p;
     }
 
     private void BlackHole()
     {
         GameObject bh = Instantiate<GameObject>(blackHolePrefab);
         bh.transform.position = transform.position;
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

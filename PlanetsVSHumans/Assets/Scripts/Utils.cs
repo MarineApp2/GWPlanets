@@ -32,7 +32,7 @@ namespace Utils
         private double t = 0.0f;
 
         // function to be called in a loop
-        // returns if the timer reached 0, specified its timer count
+        // returns if the timer reached the specified count
         public bool Bip(float count)
         {
             if (!ticking)
