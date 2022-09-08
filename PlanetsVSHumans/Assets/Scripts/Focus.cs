@@ -11,8 +11,6 @@ public class Focus : MonoBehaviour
     private GameObject focusTarget = null;
     [HideInInspector] public bool focused = false;
 
-    private Selector select = null;
-
     public float focusDistance = 10.0f;
     public float focusSpeed = 0.3f;
     private Vector3 camDir = Vector3.zero;
@@ -25,7 +23,6 @@ public class Focus : MonoBehaviour
     void Start()
     {
         camDir = transform.position.normalized;
-        select = FindObjectOfType<Selector>();
     }
 
     // Update is called once per frame
@@ -35,11 +32,15 @@ public class Focus : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, focusTarget.transform.position +
                 camDir * focusDistance, focusSpeed);
 
-        if (timeout && select.hit.collider != null && Input.GetMouseButtonUp(0))
+        if (timeout && Input.GetMouseButtonUp(0))
         {
-            target = select.hit.collider.gameObject;
-            timeout = false;
-            return;
+            RaycastHit hit = Raycaster.Pick();
+            if (hit.collider)
+            {
+                target = hit.collider.gameObject;
+                timeout = false;
+                return;
+            }
         }
 
         if (!target)
@@ -47,10 +48,20 @@ public class Focus : MonoBehaviour
 
         if (!timeout)
         {
-            if (select.hit.collider != null && Input.GetMouseButtonUp(0) && target == select.hit.collider.gameObject)
+            if (!target)
             {
-                focusTarget = target;
-                focused = true;
+                Reset();
+                return;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                RaycastHit hit = Raycaster.Pick();
+                if (hit.collider && target == hit.collider.gameObject)
+                {
+                    focusTarget = target;
+                    focused = true;
+                }
             }
 
             timeout = timer.Bip(doubleClickTime);

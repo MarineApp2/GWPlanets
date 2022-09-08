@@ -5,11 +5,10 @@ using Utils;
 
 public class Alien : MonoBehaviour
 {
-    Selector select = null;
-
     private GameObject toFollow = null;
     private GameObject instAlien = null;
     public GameObject alien = null;
+    private WeaponManager wm;
 
     Population population = null;
     Timer timer = new Timer();
@@ -31,8 +30,8 @@ public class Alien : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        select = GetComponent<Selector>();
         population = GetComponent<Population>();
+        wm = FindObjectOfType<WeaponManager>();
     }
 
     // Update is called once per frame
@@ -50,13 +49,17 @@ public class Alien : MonoBehaviour
             canGoBack = false;
         }
 
-        if (select.hit.collider != null && Input.GetKeyDown(KeyCode.Alpha2) && !isActivate && canActivate)
+        if (Input.GetMouseButtonDown(0) && wm.w == Weapon.ALIEN && !isActivate && canActivate)
         {
-            toFollow = select.hit.transform.gameObject;
-            instAlien = Instantiate(alien, Camera.main.transform.position, Quaternion.identity);
+            RaycastHit hit = Raycaster.Pick();
+            if (hit.collider && hit.collider.gameObject.tag == "Planet")
+            {
+                toFollow = hit.transform.gameObject;
+                instAlien = Instantiate(alien, Camera.main.transform.position, Quaternion.identity);
 
-            isActivate = true;
-            canActivate = false;
+                isActivate = true;
+                canActivate = false;
+            }
         }
 
         if (instAlien != null && isActivate)
