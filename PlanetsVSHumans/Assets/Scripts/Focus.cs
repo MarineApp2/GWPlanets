@@ -9,7 +9,10 @@ public class Focus : MonoBehaviour
     // can focus Pickable and Focusable game objects
     private GameObject target = null;
     private GameObject focusTarget = null;
+    [HideInInspector] public bool focused = false;
+
     private Selector select = null;
+
     public float focusDistance = 10.0f;
     public float focusSpeed = 0.3f;
     private Vector3 camDir = Vector3.zero;
@@ -47,6 +50,7 @@ public class Focus : MonoBehaviour
             if (select.hit.collider != null && Input.GetMouseButtonUp(0) && target == select.hit.collider.gameObject)
             {
                 focusTarget = target;
+                focused = true;
             }
 
             timeout = timer.Bip(doubleClickTime);
@@ -64,5 +68,6 @@ public class Focus : MonoBehaviour
 
         target = null;
         focusTarget = null;
+        focused = false;
     }
 }
