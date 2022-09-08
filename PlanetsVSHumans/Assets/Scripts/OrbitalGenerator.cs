@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 using Utils;
 
 public class OrbitalGenerator : MonoBehaviour
 {
-    public GameObject prefab;
+    public List<GameObject> prefabs = new List<GameObject>();
 
     public float generationRadius = 999.9f;
 
@@ -26,7 +27,8 @@ public class OrbitalGenerator : MonoBehaviour
 
         for (int i = 0; i < entities; ++i)
         {
-            GameObject star = Instantiate(prefab);
+            GameObject randomPrefab = prefabs[Random.Range(0, prefabs.Count)];
+            GameObject star = Instantiate(randomPrefab);
             star.transform.parent = transform;
             star.transform.position = transform.position;
             star.transform.position += new Vector3(Mathf.Cos(Random.Range(0.0f, Numerics.TAU)),
