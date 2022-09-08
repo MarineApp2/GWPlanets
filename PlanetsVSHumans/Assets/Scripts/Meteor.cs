@@ -37,9 +37,6 @@ public class Meteor : MonoBehaviour
         if (!canShoot)
             canShoot = timer.Bip(delay);
 
-        if (canShoot)
-            Debug.Log("I CAN SHOOT !!");
-
         if (instMeteor == null && isShooting)
         {
             toFollow.GetComponent<Population>().populationRate *= 1 - percentDamage;
