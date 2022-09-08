@@ -13,6 +13,7 @@ public class Focus : MonoBehaviour
 
     public float focusDistance = 10.0f;
     public float focusSpeed = 0.3f;
+    public Vector3 offset = new Vector3(0, -3, -3);
     private Vector3 camDir = Vector3.zero;
 
     public float doubleClickTime = 0.3f;
@@ -29,7 +30,7 @@ public class Focus : MonoBehaviour
     void Update()
     {
         if (focusTarget)
-            transform.position = Vector3.Lerp(transform.position, focusTarget.transform.position +
+            transform.position = Vector3.Lerp(transform.position, offset + focusTarget.transform.position +
                 camDir * focusDistance, focusSpeed);
 
         if (timeout && Input.GetMouseButtonUp(0))
