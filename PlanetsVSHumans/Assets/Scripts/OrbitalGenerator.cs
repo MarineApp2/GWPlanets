@@ -28,10 +28,10 @@ public class OrbitalGenerator : MonoBehaviour
         for (int i = 0; i < entities; ++i)
         {
             GameObject randomPrefab = prefabs[Random.Range(0, prefabs.Count)];
-            GameObject star = Instantiate(randomPrefab);
-            star.transform.parent = transform;
-            star.transform.position = transform.position;
-            star.transform.position += new Vector3(Mathf.Cos(Random.Range(0.0f, Numerics.TAU)),
+            GameObject go = Instantiate(randomPrefab);
+            go.transform.parent = transform;
+            go.transform.position = transform.position;
+            go.transform.position += new Vector3(Mathf.Cos(Random.Range(0.0f, Numerics.TAU)),
                 0.0f,
                 Mathf.Sin(Random.Range(0.0f, Numerics.TAU))).normalized * steps[i];
             float ls = go.transform.parent.transform.lossyScale.x;
