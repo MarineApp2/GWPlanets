@@ -1589,6 +1589,7 @@ MonoBehaviour:
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"TutoText1","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"TutoText2","value":{"$content":4,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"EndTutoButton","value":{"$content":5,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Camera","value":{"$content":6,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1964408698}
@@ -1597,6 +1598,7 @@ MonoBehaviour:
     - {fileID: 742831637}
     - {fileID: 1984632483}
     - {fileID: 402731489}
+    - {fileID: 2090085787}
 --- !u!4 &1732259845
 Transform:
   m_ObjectHideFlags: 0
@@ -1921,6 +1923,7 @@ GameObject:
   - component: {fileID: 1935737458}
   - component: {fileID: 1935737457}
   - component: {fileID: 1935737456}
+  - component: {fileID: 1935737459}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2002,7 +2005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteor: {fileID: 6784219978997783940, guid: 55deb1a19b6faf44c97a2a4c93545ee7, type: 3}
-  speed: 2
+  speed: 10
   percentDamage: 0.5
   delay: 3
 --- !u!114 &1935737457
@@ -2029,6 +2032,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809103ad09259f6448bdf645c2aa0cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1935737459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935737451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefcc42f39f6a2847ac49f7f03b2b194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planets: []
+  totalPopulation: 0
 --- !u!1 &1964408698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,6 +2689,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058008519}
   m_CullTransparentMesh: 1
+--- !u!1 &2090085787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1468120292821687563, guid: 319a061cdbf7e1f4da9a5d4334f42152, type: 3}
+  m_PrefabInstance: {fileID: 1468120292543913924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2090085793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090085787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90ee6656eece414b9761d243aa68b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusDistance: 10
+  focusSpeed: 0.3
+  doubleClickTime: 0.3
 --- !u!1001 &1468120292543913924
 PrefabInstance:
   m_ObjectHideFlags: 0
