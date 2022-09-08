@@ -291,18 +291,6 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3990117503672258729, guid: 7fc2f25f04b0c3d47928ecef2f921210, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990117503672258729, guid: 7fc2f25f04b0c3d47928ecef2f921210, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990117503672258729, guid: 7fc2f25f04b0c3d47928ecef2f921210, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 108
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990117503672258729, guid: 7fc2f25f04b0c3d47928ecef2f921210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1320,8 +1308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a73e418c59b9e4d96e72261be078e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteor: {fileID: 6784219978997783940, guid: 55deb1a19b6faf44c97a2a4c93545ee7, type: 3}
-  speed: 2
+  vfx: {fileID: 0}
+  percentDamage: 0.5
+  delay: 3
 --- !u!114 &1935737457
 MonoBehaviour:
   m_ObjectHideFlags: 0

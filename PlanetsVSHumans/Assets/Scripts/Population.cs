@@ -45,10 +45,10 @@ public class Population : MonoBehaviour
 
             population = (long)(populationRate * (double)(maxPopulation * Numerics.billion));
 
-            Transform child0 = transform.GetChild(0).GetChild(0);
+            Transform child0 = transform.GetChild(2).GetChild(0);
             for (int i = 0; i < child0.childCount; ++i)
                 child0.GetChild(i).GetComponent<MeshRenderer>().materials[0].SetFloat("_Alpha", 1.0f - populationRate);
-            Transform child1 = transform.GetChild(0).GetChild(1);
+            Transform child1 = transform.GetChild(2).GetChild(1);
             for (int i = 0; i < child1.childCount; ++i)
                 child1.GetChild(i).GetComponent<MeshRenderer>().materials[0].SetFloat("_Alpha", 1.0f - populationRate);
         }

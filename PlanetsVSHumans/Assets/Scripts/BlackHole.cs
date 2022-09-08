@@ -61,6 +61,8 @@ public class BlackHole : MonoBehaviour
         {
             Transform child = other.transform.GetChild(i);
             Orbital ot = child.GetComponent<Orbital>();
+            if (!ot)
+                continue;
             ot.pivotObject = galaxyBlackHoleInstance;
             child.transform.parent = other.transform.parent;
         }
