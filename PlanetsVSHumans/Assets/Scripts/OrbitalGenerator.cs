@@ -7,7 +7,7 @@ using Utils;
 
 public class OrbitalGenerator : MonoBehaviour
 {
-    public GameObject prefab;
+    public List<GameObject> prefabs = new List<GameObject>();
 
     public float generationRadius = 999.9f;
     public int entities = 10;
@@ -27,7 +27,8 @@ public class OrbitalGenerator : MonoBehaviour
 
         for (int i = 0; i < entities; ++i)
         {
-            GameObject go = Instantiate(prefab);
+            GameObject randomPrefab = prefabs[Random.Range(0, prefabs.Count)];
+            GameObject go = Instantiate(randomPrefab);
             go.transform.parent = transform;
             go.transform.position = transform.position;
             go.transform.position += new Vector3(Mathf.Cos(Random.Range(0.0f, Numerics.TAU)),

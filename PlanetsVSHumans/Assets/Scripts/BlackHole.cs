@@ -32,12 +32,13 @@ public class BlackHole : MonoBehaviour
             }
 
             Vector3 dir = transform.position - body.transform.position;
-            body.transform.position += dir.normalized * (attractionForce * Time.deltaTime);
+            body.transform.position += dir.normalized * (attractionForce * transform.localScale.x * Time.deltaTime);
 
             body.GetComponent<Orbital>().rotationSpeed = rotationSpeed / dir.magnitude;
 
             if ((transform.position - body.transform.position).magnitude <= hole)
             {
+                transform.localScale = new Vector3(transform.localScale.x + 1.0f, transform.localScale.y + 1.0f, transform.localScale.z + 1.0f);
                 Destroy(body);
             }
         }
