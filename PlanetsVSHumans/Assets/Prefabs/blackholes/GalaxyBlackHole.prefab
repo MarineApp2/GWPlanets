@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2182098405202641771}
   - component: {fileID: 1561840474000000217}
   - component: {fileID: 358738639418094219}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4824,7 +4824,7 @@ GameObject:
   - component: {fileID: 1937451768373651419}
   - component: {fileID: 5431105030596712115}
   - component: {fileID: 386539609897619253}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Blackhole_Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5041,7 +5041,7 @@ GameObject:
   - component: {fileID: 7280724678734947679}
   - component: {fileID: 2081837456382626184}
   - component: {fileID: 4959524253468840080}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Distortion_plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

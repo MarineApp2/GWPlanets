@@ -3543,7 +3543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909394748355532875, guid: a4c1577dc78e3f841a4d4847868527a6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 3909394748355532875, guid: a4c1577dc78e3f841a4d4847868527a6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5945,6 +5945,7 @@ MonoBehaviour:
   focused: 0
   focusDistance: 10
   focusSpeed: 0.3
+  offset: {x: 0, y: -3, z: -3}
   doubleClickTime: 0.3
 --- !u!114 &2090085799
 MonoBehaviour:
@@ -6186,6 +6187,18 @@ PrefabInstance:
     - target: {fileID: 1468120292821687572, guid: 319a061cdbf7e1f4da9a5d4334f42152, type: 3}
       propertyPath: min
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468120292821687572, guid: 319a061cdbf7e1f4da9a5d4334f42152, type: 3}
+      propertyPath: maxX
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468120292821687572, guid: 319a061cdbf7e1f4da9a5d4334f42152, type: 3}
+      propertyPath: maxY
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468120292821687572, guid: 319a061cdbf7e1f4da9a5d4334f42152, type: 3}
+      propertyPath: maxZoom
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1468120292821687572, guid: 319a061cdbf7e1f4da9a5d4334f42152, type: 3}
       propertyPath: sensivityScroll

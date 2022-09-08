@@ -6,10 +6,12 @@ public class MouseMovement : MonoBehaviour
 {
     Vector3 position = new Vector3();
 
-    public float sensivityMove = 0.3f;
-    public float sensivityScroll = 10f;
-    public float min = 53.5f;
-    public float max = 100f;
+    public float sensivityMove = 1f;
+    public float maxX = 75f;
+    public float maxY = 75f;
+    public float sensivityScroll = 50f;
+    public float minZoom = 0f;
+    public float maxZoom = 60f;
 
     private Focus focus;
 
@@ -23,26 +25,31 @@ public class MouseMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!IsMouseOffTheScreen() && Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetAxis("Mouse ScrollWheel") > 0f && transform.position.y != min)
+        if (!IsMouseOffTheScreen() && Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetAxis("Mouse ScrollWheel") > 0f && transform.position.y != minZoom)
         {
-            focus.Reset();
-
             position = transform.position;
 
-            position += Input.GetAxis("Mouse ScrollWheel") * transform.forward * sensivityScroll;
-            position.y = Mathf.Clamp(position.y, min, max);
+            focus.Reset();
 
-            if (position.y != max)
-                transform.position = new Vector3(position.x, position.y, position.z);
+            position += Input.GetAxis("Mouse ScrollWheel") * transform.forward * sensivityScroll;
+            position.y = Mathf.Clamp(position.y, minZoom, maxZoom);
+
+            if (position.y != maxZoom)
+                transform.position = position;
         }
 
 
         if (!focus.focused && !IsMouseOffTheScreen() && Input.GetMouseButton(0))
         {
+            position = transform.position;
+
             position.x -= Input.GetAxis("Mouse X") * sensivityMove;
             position.z -= Input.GetAxis("Mouse Y") * sensivityMove;
 
-            transform.position = new Vector3(position.x, transform.position.y, position.z);
+            position.x = Mathf.Clamp(position.x, -maxX, maxX);
+            position.z = Mathf.Clamp(position.z, -maxY, maxY);
+
+            transform.position = position;
         }
     }
 
