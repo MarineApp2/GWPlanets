@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3909394748355532877, guid: 24bce6e80d50e60488a3098e9ac754ad, type: 3}
-  generationRadius: 100
+  generationRadius: 75
   entities: 4
-  orbitalRotationSpeed: 500
+  orbitalRotationSpeed: 250
+  minimumSize: 1
+  maximumSize: 5

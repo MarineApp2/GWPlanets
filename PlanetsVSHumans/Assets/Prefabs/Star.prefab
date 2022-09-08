@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0
+  clockwise: 1
   pivotObject: {fileID: 0}
 --- !u!114 &7889962397876236934
 MonoBehaviour:
@@ -128,9 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3909394748355532877, guid: 44d9b69e13ec3e542804819c091187b8, type: 3}
-  generationRadius: 12
+  generationRadius: 20
   entities: 7
-  orbitalRotationSpeed: 80
+  orbitalRotationSpeed: 200
+  minimumSize: 1
+  maximumSize: 5
 --- !u!114 &3462234033848558364
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,47 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Utils;
+
 public class Meteor : MonoBehaviour
 {
-    Selector select = null;
+    public GameObject vfx = null;
+    private GameObject target = null;
 
-    private GameObject toFollow = null;
-    private GameObject instMeteor = null;
-    public GameObject meteor = null;
+    private WeaponManager wm;
 
-    bool isShoot = false;
+    Timer timerDelay = new Timer();
+    Timer timer = new Timer();
 
-    private float elapsedTime = 0f;
-    public float speed = 2f;
+    public float percentDamage = 0.5f;
+    public float delay = 3f;
+
+    private bool isShooting = false;
+    private bool canShoot = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        select = GetComponent<Selector>();
+        wm = FindObjectOfType<WeaponManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (select.hit.collider != null && Input.GetMouseButtonDown(1))
-        {
-            toFollow = select.hit.transform.gameObject;
-            instMeteor = Instantiate(meteor, Camera.main.transform.position, Quaternion.identity);
-            isShoot = true;
-        }
-        
-        if (instMeteor != null && isShoot)
-        {
-            elapsedTime += Time.deltaTime;
-            float percentageComplete = elapsedTime / speed;
+        if (!canShoot)
+            canShoot = timerDelay.Bip(delay);
 
-            instMeteor.transform.position = Vector3.Lerp(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z), toFollow.transform.position, percentageComplete);
-        }
-    }
+        if (Input.GetMouseButtonDown(0) && wm.w == Weapon.METEOR && !isShooting && canShoot)
+        {
+            RaycastHit hit = Raycaster.Pick();
+            if (hit.collider && hit.collider.gameObject.tag == "Planet")
+            {
+                Transform child = hit.transform.GetChild(0);
+                target = hit.transform.gameObject;
+                child.gameObject.SetActive(true);
 
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Destroy");
-        Destroy(this.gameObject);
+                isShooting = true;
+                canShoot = false;
+
+                return;
+            }
+        }
+
+        if (isShooting)
+        {
+            bool time = timer.Bip(2f);
+            if (time)
+            {
+                Population pop = target.GetComponent<Population>();
+                pop.populationRate *= 1 - percentDamage;
+                Transform child = target.transform.GetChild(0);
+                child.gameObject.SetActive(false);
+
+
+                target = null;
+                isShooting = false;
+            }
+        }
     }
 }

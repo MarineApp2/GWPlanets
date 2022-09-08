@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 using Utils;
@@ -17,23 +18,40 @@ public class Population : MonoBehaviour
 
     // tick for population growth (growth per second)
     [SerializeField] private float growthTick = 1.0f;
-    [SerializeField] private float growthRate = 0.01f;
+    [SerializeField] private float growthSpeedMin = 1.0f;
+    [SerializeField] private float growthSpeedMax = 5.0f;
+    private float growthRate = 0.01f;
 
-    private Timer timer = new Timer();
+    private Utils.Timer timer = new Utils.Timer();
+
+    // only planets have the Population script
+    Master master;
 
     // Start is called before the first frame update
     void Start()
     {
+        growthRate *= Random.Range(growthSpeedMin, growthSpeedMax);
 
+        master = FindObjectOfType<Master>();
+        master.planets.Add(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (timer.Bip(growthTick))
+        {
             populationRate += growthRate;
 
-        population = (long)(populationRate * (double)(maxPopulation * Numerics.billion));
+            population = (long)(populationRate * (double)(maxPopulation * Numerics.billion));
+
+            Transform child0 = transform.GetChild(0).GetChild(0);
+            for (int i = 0; i < child0.childCount; ++i)
+                child0.GetChild(i).GetComponent<MeshRenderer>().materials[0].SetFloat("_Alpha", 1.0f - populationRate);
+            Transform child1 = transform.GetChild(0).GetChild(1);
+            for (int i = 0; i < child1.childCount; ++i)
+                child1.GetChild(i).GetComponent<MeshRenderer>().materials[0].SetFloat("_Alpha", 1.0f - populationRate);
+        }
 
         if (populationRate >= 1.0f)
             BlackHole();
@@ -44,5 +62,10 @@ public class Population : MonoBehaviour
         GameObject bh = Instantiate<GameObject>(blackHolePrefab);
         bh.transform.position = transform.position;
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        master.planets.Remove(gameObject);
     }
 }

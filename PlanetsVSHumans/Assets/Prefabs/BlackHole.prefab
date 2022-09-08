@@ -5010,6 +5010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractionForce: 1
+  rotationSpeed: 100
 --- !u!135 &6590750559753709601
 SphereCollider:
   m_ObjectHideFlags: 0
