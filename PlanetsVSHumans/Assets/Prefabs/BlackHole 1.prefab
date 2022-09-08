@@ -222,8 +222,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.21530268, g: 0.02436809, b: 0.3490566, a: 1}
-      maxColor: {r: 0.82582086, g: 0.27386966, b: 0.9245283, a: 1}
+      minColor: {r: 0.10484152, g: 0.2567595, b: 0.5377358, a: 1}
+      maxColor: {r: 0.9254902, g: 0.27450988, b: 0.28070444, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4874,7 +4874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6e6c7ab93d856b34dbb874246efe8066, type: 2}
+  - {fileID: 2100000, guid: 702004920d537894cb4174e950782e3b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4923,7 +4923,7 @@ GameObject:
   - component: {fileID: 1303372106544433199}
   - component: {fileID: 6590750559753709601}
   m_Layer: 0
-  m_Name: BlackHole
+  m_Name: BlackHole 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5010,7 +5010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractionForce: 1
-  rotationSpeed: 100
 --- !u!135 &6590750559753709601
 SphereCollider:
   m_ObjectHideFlags: 0
