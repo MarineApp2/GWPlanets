@@ -6,20 +6,14 @@ using Utils;
 
 public class Meteor : MonoBehaviour
 {
-    private GameObject toFollow = null;
-    private GameObject instMeteor = null;
+    public GameObject vfx = null;
+    private GameObject target = null;
 
     private WeaponManager wm;
 
-    public GameObject meteor = null;
-
-    public GameObject vfx = null;
-
-    Population population = null;
+    Timer timerDelay = new Timer();
     Timer timer = new Timer();
 
-    private float elapsedTime = 0f;
-    public float speed = 2f;
     public float percentDamage = 0.5f;
     public float delay = 3f;
 
@@ -30,44 +24,44 @@ public class Meteor : MonoBehaviour
     void Start()
     {
         wm = FindObjectOfType<WeaponManager>();
-        population = GetComponent<Population>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (!canShoot)
-            canShoot = timer.Bip(delay);
-
-        if (instMeteor == null && isShooting)
-        {
-            toFollow.GetComponent<Population>().populationRate *= 1 - percentDamage;
-
-            isShooting = false;
-            elapsedTime = 0;
-        }
+            canShoot = timerDelay.Bip(delay);
 
         if (Input.GetMouseButtonDown(0) && wm.w == Weapon.METEOR && !isShooting && canShoot)
         {
             RaycastHit hit = Raycaster.Pick();
             if (hit.collider && hit.collider.gameObject.tag == "Planet")
             {
-                toFollow = hit.transform.gameObject;
-                vfx.SetActive(true);
-                instMeteor = Instantiate(meteor, Camera.main.transform.position, Quaternion.identity);
+                Transform child = hit.transform.GetChild(0);
+                target = hit.transform.gameObject;
+                child.gameObject.SetActive(true);
 
                 isShooting = true;
                 canShoot = false;
+
+                return;
             }
         }
-        
-        if (instMeteor != null && isShooting)
-        {
-            elapsedTime += Time.deltaTime;
-            float percentageComplete = elapsedTime / speed;
 
-            instMeteor.transform.position = Vector3.Lerp(instMeteor.transform.position, toFollow.transform.position, percentageComplete);
+        if (isShooting)
+        {
+            bool time = timer.Bip(2f);
+            if (time)
+            {
+                Population pop = target.GetComponent<Population>();
+                pop.populationRate *= 1 - percentDamage;
+                Transform child = target.transform.GetChild(0);
+                child.gameObject.SetActive(false);
+
+
+                target = null;
+                isShooting = false;
+            }
         }
     }
 }
