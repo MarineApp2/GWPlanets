@@ -10,8 +10,9 @@ public class Meteor : MonoBehaviour
 
     private GameObject toFollow = null;
     private GameObject instMeteor = null;
-
     public GameObject meteor = null;
+
+    public GameObject vfx = null;
 
     Population population = null;
     Timer timer = new Timer();
@@ -34,6 +35,7 @@ public class Meteor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!canShoot)
             canShoot = timer.Bip(delay);
 
@@ -48,7 +50,8 @@ public class Meteor : MonoBehaviour
         if (select.hit.collider != null && Input.GetKeyDown(KeyCode.Alpha1) && !isShooting && canShoot)
         {
             toFollow = select.hit.transform.gameObject;
-            instMeteor = Instantiate(meteor, Camera.main.transform.position, Quaternion.identity);
+            vfx.SetActive(true);
+            //instMeteor = Instantiate(meteor, Camera.main.transform.position, Quaternion.identity);
 
             isShooting = true;
             canShoot = false;
