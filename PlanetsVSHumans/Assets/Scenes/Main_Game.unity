@@ -1065,9 +1065,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Commandes:\n\nZoom avant / arri\xE8re : Molette de la souris\r\n\nClic
-    gauche / Touches 1, 2, 3 pour s\xE9lectionner les skills\r\n\nClic gauche sur
-    une plan\xE8te pour utiliser le skill s\xE9lectionn\xE9"
+  m_Text: "Commandes:\n\nZoom avant / arri\xE8re : Molette de la souris\r\n\nTouches
+    1, 2, 3 pour utiliser le skill correspondant en visant la plan\xE8te voulue avec
+    la souris."
 --- !u!222 &980248688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2003,6 +2003,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteor: {fileID: 6784219978997783940, guid: 55deb1a19b6faf44c97a2a4c93545ee7, type: 3}
   speed: 2
+  percentDamage: 0.5
+  delay: 3
 --- !u!114 &1935737457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2461,6 +2463,10 @@ PrefabInstance:
     - target: {fileID: 9058517177498845717, guid: 13946200cf776fa4ead09cf8abf4f3f4, type: 3}
       propertyPath: entities
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058517177498845717, guid: 13946200cf776fa4ead09cf8abf4f3f4, type: 3}
+      propertyPath: generationRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9058517177498845717, guid: 13946200cf776fa4ead09cf8abf4f3f4, type: 3}
       propertyPath: orbitalRotationSpeed
