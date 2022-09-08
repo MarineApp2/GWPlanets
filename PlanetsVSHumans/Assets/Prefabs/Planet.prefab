@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -789018872276018723}
   m_Layer: 0
   m_Name: Planet
-  m_TagString: Pickable
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b9f09105b16c50743bf8029056b85ef5, type: 2}
+  - {fileID: 2100000, guid: ca24cbfc704d54a46b31b15d58eb4fe9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -6,10 +6,10 @@ using Utils;
 
 public class Meteor : MonoBehaviour
 {
-    Selector select = null;
-
     private GameObject toFollow = null;
     private GameObject instMeteor = null;
+
+    private WeaponManager wm;
 
     public GameObject meteor = null;
 
@@ -27,7 +27,7 @@ public class Meteor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        select = GetComponent<Selector>();
+        wm = FindObjectOfType<WeaponManager>();
         population = GetComponent<Population>();
     }
 
@@ -45,13 +45,17 @@ public class Meteor : MonoBehaviour
             elapsedTime = 0;
         }
 
-        if (select.hit.collider != null && Input.GetKeyDown(KeyCode.Alpha1) && !isShooting && canShoot)
+        if (Input.GetMouseButtonDown(0) && wm.w == Weapon.METEOR && !isShooting && canShoot)
         {
-            toFollow = select.hit.transform.gameObject;
-            instMeteor = Instantiate(meteor, Camera.main.transform.position, Quaternion.identity);
+            RaycastHit hit = Raycaster.Pick();
+            if (hit.collider && hit.collider.gameObject.tag == "Planet")
+            {
+                toFollow = hit.transform.gameObject;
+                instMeteor = Instantiate(meteor, Camera.main.transform.position, Quaternion.identity);
 
-            isShooting = true;
-            canShoot = false;
+                isShooting = true;
+                canShoot = false;
+            }
         }
         
         if (instMeteor != null && isShooting)
