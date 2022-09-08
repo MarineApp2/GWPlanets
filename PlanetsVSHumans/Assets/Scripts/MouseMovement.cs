@@ -25,9 +25,9 @@ public class MouseMovement : MonoBehaviour
     {
         if (!IsMouseOffTheScreen() && Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetAxis("Mouse ScrollWheel") > 0f && transform.position.y != min)
         {
-            focus.Reset();
-
             position = transform.position;
+
+            focus.Reset();
             
             position += Input.GetAxis("Mouse ScrollWheel") * transform.forward * sensivityScroll;
             position.y = Mathf.Clamp(position.y, min, max);

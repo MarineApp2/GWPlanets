@@ -11,6 +11,7 @@ public class Focus : MonoBehaviour
     private GameObject focusTarget = null;
     private Selector select = null;
     public float focusDistance = 10.0f;
+    public float focusSpeed = 0.3f;
     private Vector3 camDir = Vector3.zero;
 
     public float doubleClickTime = 0.3f;
@@ -28,8 +29,8 @@ public class Focus : MonoBehaviour
     void Update()
     {
         if (focusTarget)
-            transform.position = focusTarget.transform.position +
-                camDir * Mathf.Lerp((focusTarget.transform.position - transform.position).magnitude, focusDistance, Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, focusTarget.transform.position +
+                camDir * focusDistance, focusSpeed);
 
         if (timeout && select.hit.collider != null && Input.GetMouseButtonUp(0))
         {
