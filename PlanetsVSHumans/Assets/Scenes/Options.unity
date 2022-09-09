@@ -413,8 +413,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Zoom avant / arri\xE8re : Molette de la souris\r\nTouches 1, 2, 3 pour
-    utiliser le skill correspondant en visant la plan\xE8te voulue avec la souris."
+  m_Text: "- Zoom avant / arri\xE8re : Molette de la souris\r\n- Touches 1, 2, 3
+    pour activer la comp\xE9tence correspondante\n- Clic gauche sur une plan\xE8te
+    pour utiliser la comp\xE9tence"
 --- !u!222 &597055671
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -910,7 +911,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1342099396
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class Laser : MonoBehaviour
     public float delay = 3f;
 
     private bool isShooting = false;
-    private bool canShoot = true;
+    public bool canShoot = true;
 
     // Start is called before the first frame update
     void Start()
