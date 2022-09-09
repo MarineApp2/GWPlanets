@@ -8,7 +8,9 @@ public class MouseMovement : MonoBehaviour
 
     public float sensivityMove = 1f;
     public float maxX = 75f;
+    public float minX = -75f;
     public float maxY = 75f;
+    public float minY = -75f;
     public float sensivityScroll = 50f;
     public float minZoom = 0f;
     public float maxZoom = 60f;
@@ -46,8 +48,8 @@ public class MouseMovement : MonoBehaviour
             position.x -= Input.GetAxis("Mouse X") * sensivityMove;
             position.z -= Input.GetAxis("Mouse Y") * sensivityMove;
 
-            position.x = Mathf.Clamp(position.x, -maxX, maxX);
-            position.z = Mathf.Clamp(position.z, -maxY, maxY);
+            position.x = Mathf.Clamp(position.x, minX, maxX);
+            position.z = Mathf.Clamp(position.z, minY, maxY);
 
             transform.position = position;
         }
