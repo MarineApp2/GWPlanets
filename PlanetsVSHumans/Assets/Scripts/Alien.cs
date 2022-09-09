@@ -40,7 +40,7 @@ public class Alien : MonoBehaviour
         if (!canActivate && !isActivate)
             canActivate = timer.Bip(delay);
 
-        if (instAlien == null && isActivate)
+        if (instAlien == null && isActivate && toFollow != null)
         {
             Debug.Log(toFollow.GetComponent<Population>().populationRate);
             toFollow.GetComponent<Population>().populationRate *= 1 - percentDamage;
