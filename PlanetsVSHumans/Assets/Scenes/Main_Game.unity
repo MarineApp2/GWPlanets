@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 4879276}
   - component: {fileID: 4879275}
   - component: {fileID: 4879277}
+  - component: {fileID: 4879278}
   m_Layer: 5
   m_Name: RecommencerOnClick
   m_TagString: Untagged
@@ -244,6 +245,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4879278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1017145609
+      Data2: 1328688649
+      Data3: 113324694
+      Data4: -1894262265
+    Path: event:/UI/Click_Mouse
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &17303447
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +597,7 @@ GameObject:
   - component: {fileID: 136029019}
   - component: {fileID: 136029018}
   - component: {fileID: 136029020}
+  - component: {fileID: 136029021}
   m_Layer: 5
   m_Name: QuitAppOnClick
   m_TagString: Untagged
@@ -675,6 +707,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &136029021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136029016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1017145609
+      Data2: 1328688649
+      Data3: 113324694
+      Data4: -1894262265
+    Path: event:/UI/Click_Mouse
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &160019726
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +825,7 @@ GameObject:
   - component: {fileID: 172483407}
   - component: {fileID: 172483406}
   - component: {fileID: 172483408}
+  - component: {fileID: 172483409}
   m_Layer: 5
   m_Name: QuitGameOnClick
   m_TagString: Untagged
@@ -872,6 +935,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &172483409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172483404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1017145609
+      Data2: 1328688649
+      Data3: 113324694
+      Data4: -1894262265
+    Path: event:/UI/Click_Mouse
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &225504485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,8 +1356,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Votre but est de sauver les plan\xE8tes de leur extinction ! \n\nUtilisez
-    les diff\xE9rents skills afin d'\xE9liminer la population et garder les plan\xE8tes
-    en vie. \n\n"
+    les diff\xE9rentes comp\xE9tences afin d'\xE9liminer la population et garder
+    les plan\xE8tes en vie. \n\n"
 --- !u!222 &345970304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4168,6 +4261,7 @@ GameObject:
   - component: {fileID: 1428029854}
   - component: {fileID: 1428029853}
   - component: {fileID: 1428029855}
+  - component: {fileID: 1428029856}
   m_Layer: 5
   m_Name: ReprendreOnClick
   m_TagString: Untagged
@@ -4277,6 +4371,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1428029856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428029851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1017145609
+      Data2: 1328688649
+      Data3: 113324694
+      Data4: -1894262265
+    Path: event:/UI/Click_Mouse
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1496838756
 GameObject:
   m_ObjectHideFlags: 0
@@ -6021,6 +6145,7 @@ GameObject:
   - component: {fileID: 2006064700}
   - component: {fileID: 2006064699}
   - component: {fileID: 2006064701}
+  - component: {fileID: 2006064702}
   m_Layer: 5
   m_Name: OptionsOnClick
   m_TagString: Untagged
@@ -6130,6 +6255,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2006064702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006064697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1017145609
+      Data2: 1328688649
+      Data3: 113324694
+      Data4: -1894262265
+    Path: event:/UI/Click_Mouse
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2017603929
 GameObject:
   m_ObjectHideFlags: 0
