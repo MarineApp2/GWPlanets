@@ -55,7 +55,8 @@ public class Alien : MonoBehaviour
             if (hit.collider && hit.collider.gameObject.tag == "Planet")
             {
                 toFollow = hit.transform.gameObject;
-                instAlien = Instantiate(alien, Camera.main.transform.position, Quaternion.identity);
+                Vector3 pos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 15f, Camera.main.transform.position.z);
+                instAlien = Instantiate(alien, pos, Quaternion.identity);
 
                 isActivate = true;
                 canActivate = false;
@@ -78,7 +79,7 @@ public class Alien : MonoBehaviour
                 if (toFollow == null)
                     canDestroy = true;
 
-                destPos = new Vector3(toFollow.transform.position.x, toFollow.transform.position.y + toFollow.transform.localScale.y + 2, toFollow.transform.position.z);
+                destPos = new Vector3(toFollow.transform.position.x, toFollow.transform.position.y + toFollow.transform.localScale.y + 7, toFollow.transform.position.z);
                 instAlien.transform.position = Vector3.Lerp(instAlien.transform.position, destPos, percentageComplete);
 
                 canGoBack = timer.Bip(fixTime);
@@ -91,7 +92,7 @@ public class Alien : MonoBehaviour
                 if (toFollow == null)
                     canDestroy = true;
 
-                initPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 5f, Camera.main.transform.position.z);
+                initPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 15f, Camera.main.transform.position.z);
                 instAlien.transform.position = Vector3.Lerp(instAlien.transform.position, initPos, percentageComplete);
 
                 canDestroy = timer.Bip(1);

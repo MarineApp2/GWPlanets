@@ -5025,9 +5025,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 3909394748355532877, guid: 24bce6e80d50e60488a3098e9ac754ad, type: 3}
-  generationRadius: 500
-  maxEntities: 10
-  orbitalRotationSpeed: 150
+  generationRadius: 100
+  maxEntities: 5
+  orbitalRotationSpeed: 120
   generationTime: 10
   minimumSize: 1
   maximumSize: 5

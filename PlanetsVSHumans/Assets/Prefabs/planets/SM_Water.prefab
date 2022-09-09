@@ -138,7 +138,7 @@ MonoBehaviour:
   maxPopulation: 10
   growthTick: 1
   growthSpeedMin: 1
-  growthSpeedMax: 5
+  growthSpeedMax: 7
 --- !u!114 &-142648755897037540
 MonoBehaviour:
   m_ObjectHideFlags: 0

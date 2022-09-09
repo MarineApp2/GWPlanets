@@ -139,11 +139,11 @@ MonoBehaviour:
   - {fileID: 8188669378669053866, guid: 46565815543037d48982ff6980395a8d, type: 3}
   - {fileID: 3824062794149534189, guid: 59157d04982dd2c4382d569259a6547e, type: 3}
   - {fileID: 7601805732850533882, guid: eb04c5ce2e56c4344af6af84d7ba3cb4, type: 3}
-  generationRadius: 20
-  entities: 7
-  orbitalRotationSpeed: 200
+  generationRadius: 15
+  entities: 4
+  orbitalRotationSpeed: 300
   minimumSize: 1
-  maximumSize: 5
+  maximumSize: 4
 --- !u!114 &3462234033848558364
 MonoBehaviour:
   m_ObjectHideFlags: 0

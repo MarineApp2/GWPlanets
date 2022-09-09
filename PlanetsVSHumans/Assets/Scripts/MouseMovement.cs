@@ -41,7 +41,7 @@ public class MouseMovement : MonoBehaviour
         }
 
 
-        if (!focus.focused && !IsMouseOffTheScreen() && Input.GetMouseButton(0))
+        if (!focus.focused && !IsMouseOffTheScreen() && Input.GetMouseButton(1))
         {
             position = transform.position;
 
