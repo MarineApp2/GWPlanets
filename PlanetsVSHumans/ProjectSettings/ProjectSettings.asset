@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: PlanetsVSHumans
-  defaultCursor: {fileID: 2800000, guid: fd214003531bc834fb3d1e635ea97781, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 088215f8f4d081c42997cef35bd5e8a8, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -273,7 +273,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 978e2f7a5f8484e4f90d81db214d64b3, type: 3}
+      m_Icon: {fileID: 2800000, guid: a1c1e4de38794e94c8be6ecdb37efc9f, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

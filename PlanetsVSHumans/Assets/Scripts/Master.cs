@@ -5,6 +5,7 @@ using UnityEngine;
 public class Master : MonoBehaviour
 {
     public List<GameObject> planets = new List<GameObject>();
+    public int planetCount = 0;
     public long totalPopulation = 0;
 
     // Start is called before the first frame update
@@ -22,5 +23,7 @@ public class Master : MonoBehaviour
         {
             totalPopulation += planet.GetComponent<Population>().population;
         }
+
+        planetCount = planets.Count;
     }
 }
