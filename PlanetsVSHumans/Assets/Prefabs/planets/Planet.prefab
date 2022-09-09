@@ -254,6 +254,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82008c3cc3a79004b9b334a184b221e9, type: 3}
+--- !u!1 &3508116115294825128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3332476677560367347, guid: 82008c3cc3a79004b9b334a184b221e9, type: 3}
+  m_PrefabInstance: {fileID: 2202261201041936987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2089033842996173664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508116115294825128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 927157598
+      Data2: 1118929114
+      Data3: 1385348776
+      Data4: 384716950
+    Path: event:/Skills/Skill_Meteor
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 200
 --- !u!4 &3508116115294825131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3332476677560367344, guid: 82008c3cc3a79004b9b334a184b221e9, type: 3}
@@ -341,3 +376,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8297780788914229270, guid: e72f166e800c4ed4ab662c41bbf1d6ae, type: 3}
   m_PrefabInstance: {fileID: 8257318854646278336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &121667654029719767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8297780788914229271, guid: e72f166e800c4ed4ab662c41bbf1d6ae, type: 3}
+  m_PrefabInstance: {fileID: 8257318854646278336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1672686243746243628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121667654029719767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
+--- !u!114 &3245259256549771854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121667654029719767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1089235815
+      Data2: 1300066506
+      Data3: 1975993787
+      Data4: 1009466689
+    Path: event:/Skills/Skill_DeathStar
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 180

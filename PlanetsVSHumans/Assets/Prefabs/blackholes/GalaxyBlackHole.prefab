@@ -4922,6 +4922,7 @@ GameObject:
   - component: {fileID: 3909394748355532873}
   - component: {fileID: 6590750559753709601}
   - component: {fileID: -8378878524401354835}
+  - component: {fileID: 3749696606420527282}
   m_Layer: 0
   m_Name: GalaxyBlackHole
   m_TagString: Untagged
@@ -5024,12 +5025,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 3909394748355532877, guid: 24bce6e80d50e60488a3098e9ac754ad, type: 3}
-  generationRadius: 50
-  maxEntities: 3
-  orbitalRotationSpeed: 200
-  generationTime: 5
+  generationRadius: 500
+  maxEntities: 10
+  orbitalRotationSpeed: 150
+  generationTime: 10
   minimumSize: 1
   maximumSize: 5
+--- !u!114 &3749696606420527282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909394748355532877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1421969911
+      Data2: 1296322307
+      Data3: 2104524161
+      Data4: 221033381
+    Path: event:/Other FX/BlackHole
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 150
 --- !u!1 &4407209559845469988
 GameObject:
   m_ObjectHideFlags: 0

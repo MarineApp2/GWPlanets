@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: -2857613494586997141, guid: eef8aee687d4d004297ffd198b382e10, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a6d10e69a016d1347bdda037137fa330, type: 2}
+      objectReference: {fileID: 2100000, guid: 755df3aa8ba3cfe4ea0d166f9b3155f3, type: 2}
     - target: {fileID: 919132149155446097, guid: eef8aee687d4d004297ffd198b382e10, type: 3}
       propertyPath: m_Name
       value: FlyingSaucer Variant
@@ -74,6 +74,41 @@ PrefabInstance:
     - target: {fileID: 7858497250458986216, guid: eef8aee687d4d004297ffd198b382e10, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 08baaf95d667c6a4599de2d0e549ae65, type: 2}
+      objectReference: {fileID: 2100000, guid: 4067a01d00258df428e9388c422e1dc7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef8aee687d4d004297ffd198b382e10, type: 3}
+--- !u!1 &6220533679526815938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eef8aee687d4d004297ffd198b382e10, type: 3}
+  m_PrefabInstance: {fileID: 6526472038939465107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6425870538189850087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220533679526815938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1828459025
+      Data2: 1177147241
+      Data3: 826554812
+      Data4: 955220708
+    Path: event:/Skills/Skill_Aliens
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 150

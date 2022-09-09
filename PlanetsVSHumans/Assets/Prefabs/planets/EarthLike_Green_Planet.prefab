@@ -265,6 +265,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8297780788914229270, guid: e72f166e800c4ed4ab662c41bbf1d6ae, type: 3}
   m_PrefabInstance: {fileID: 2581112665327136224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5833946998924836343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8297780788914229271, guid: e72f166e800c4ed4ab662c41bbf1d6ae, type: 3}
+  m_PrefabInstance: {fileID: 2581112665327136224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2345703270221899616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5833946998924836343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1089235815
+      Data2: 1300066506
+      Data3: 1975993787
+      Data4: 1009466689
+    Path: event:/Skills/Skill_DeathStar
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 180
 --- !u!1001 &4452727653372764089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,6 +773,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82008c3cc3a79004b9b334a184b221e9, type: 3}
+--- !u!1 &6166420920716609704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3332476677560367347, guid: 82008c3cc3a79004b9b334a184b221e9, type: 3}
+  m_PrefabInstance: {fileID: 8911729526855938139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2659781498756334952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166420920716609704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 927157598
+      Data2: 1118929114
+      Data3: 1385348776
+      Data4: 384716950
+    Path: event:/Skills/Skill_Meteor
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 200
 --- !u!4 &6166420920716609707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3332476677560367344, guid: 82008c3cc3a79004b9b334a184b221e9, type: 3}
