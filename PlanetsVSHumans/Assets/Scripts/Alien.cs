@@ -49,7 +49,7 @@ public class Alien : MonoBehaviour
             canGoBack = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && wm.w == Weapon.ALIEN && !isActivate && canActivate)
+        if (Input.GetMouseButtonDown(0) && wm.weapon == Weapon.ALIEN && !isActivate && canActivate)
         {
             RaycastHit hit = Raycaster.Pick();
             if (hit.collider && hit.collider.gameObject.tag == "Planet")
@@ -64,11 +64,20 @@ public class Alien : MonoBehaviour
 
         if (instAlien != null && isActivate)
         {
+            if (toFollow == null)
+            {
+                canGoBack = true;
+                elapsedTime = 0f;
+            }
+
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / speed;
 
             if (!canGoBack)
             {
+                if (toFollow == null)
+                    canDestroy = true;
+
                 destPos = new Vector3(toFollow.transform.position.x, toFollow.transform.position.y + toFollow.transform.localScale.y + 2, toFollow.transform.position.z);
                 instAlien.transform.position = Vector3.Lerp(instAlien.transform.position, destPos, percentageComplete);
 
@@ -79,6 +88,9 @@ public class Alien : MonoBehaviour
             }
             else
             {
+                if (toFollow == null)
+                    canDestroy = true;
+
                 initPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 5f, Camera.main.transform.position.z);
                 instAlien.transform.position = Vector3.Lerp(instAlien.transform.position, initPos, percentageComplete);
 

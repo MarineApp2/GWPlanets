@@ -12,7 +12,7 @@ public enum Weapon
 
 public class WeaponManager : MonoBehaviour
 {
-    public Weapon w = Weapon.NONE;
+    public Weapon weapon = Weapon.NONE;
 
     // Start is called before the first frame update
     void Start()
@@ -25,15 +25,30 @@ public class WeaponManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            w = Weapon.ALIEN;
+            weapon = Weapon.ALIEN;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            w = Weapon.METEOR;
+            weapon = Weapon.METEOR;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            w = Weapon.LASER;
+            weapon = Weapon.LASER;
         }
+    }
+
+    public void OnAlienClick()
+    {
+        weapon = Weapon.ALIEN;
+    }
+
+    public void OnMeteorClick()
+    {
+        weapon = Weapon.METEOR;
+    }
+
+    public void OnLaserClick()
+    {
+        weapon = Weapon.LASER;
     }
 }

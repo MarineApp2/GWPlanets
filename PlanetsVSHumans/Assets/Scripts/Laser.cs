@@ -31,7 +31,7 @@ public class Laser : MonoBehaviour
         if (!canShoot)
             canShoot = timerDelay.Bip(delay);
 
-        if (Input.GetMouseButtonDown(0) && wm.w == Weapon.LASER && !isShooting && canShoot)
+        if (Input.GetMouseButtonDown(0) && wm.weapon == Weapon.LASER && !isShooting && canShoot)
         {
             RaycastHit hit = Raycaster.Pick();
             if (hit.collider && hit.collider.gameObject.tag == "Planet")
