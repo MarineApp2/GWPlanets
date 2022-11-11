@@ -20,7 +20,7 @@ public class Alien : MonoBehaviour
     public float fixTime = 7f;
 
     public bool canActivate = true;
-    private bool isActivate = false;
+    public bool isActivate = false;
     private bool canGoBack = false;
     private bool canDestroy = false;
 
